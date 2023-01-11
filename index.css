@@ -1,0 +1,291 @@
+body,html{
+    background-color: rgb(41, 41, 39);
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+#header{
+    background:rgba(46, 46, 46, 0.8) ;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+#container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+header::after {
+    content: ''; 
+    display: table;
+    clear: both;
+}
+
+.logo{
+    float: left;
+    height: 100px;
+    width: 250px;
+}
+
+nav{
+    float: right;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+nav li{
+    margin-left: 70px;
+    margin-top: 40px;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.img{
+    height: 350px;
+}
+
+#img1{
+    padding-left: 60px;
+    padding-top: 35px;
+}
+
+#part1{
+    display: flex;
+}
+
+#par1{
+    padding-top: 82px;
+    padding-left: 15px;
+}
+
+a:hover{
+    color: grey;
+}
+
+#section1{
+    height: 730px;
+}
+
+#section2{  
+    height: 730px;
+    background: linear-gradient(165deg, rgb(34, 163, 159) 48%, rgb(41, 41, 39) 25%); 
+}
+#section3{
+    height: 730px;
+    background: rgb(41, 41, 39);
+}
+
+#section4{
+    background: rgb(34, 163, 159);
+    height: 300px;
+}
+
+.profile{
+    display: flex;
+    justify-content: space-around   ;
+}
+
+.profile div{
+    height: 300px;
+    width: 300px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.profile img{
+    height: 190px;
+    width: 300px;
+    align-items: center;
+}
+
+.profile p{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.profile a{
+   margin-left: 100px;
+}
+
+#section4{
+    display: flex;
+}
+
+.text{
+    width: 200px;
+    margin-left: 180px;
+    padding-top: 50px;
+}
+
+.fa-regular{
+    font-size: 2em
+}
+
+#email{
+    margin-left: 20px;
+    margin-top: 55px;
+}
+
+.animation{
+   text-align: center; 
+   position: absolute;  
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 100%;
+}
+
+.animation span{
+    text-transform: uppercase;
+    display: block;
+}
+
+.text1{ 
+    color: black;
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    margin-bottom: 20px;   
+    background: rgb(41, 41, 39);
+    position: relative;
+    animation: text 3s 1;
+}
+
+.text2{
+    font-size: 30px;
+    color: darkcyan;
+}
+
+#button1{
+    text-align: center; 
+    position: absolute;  
+    top: 60%;
+    left: 44.77%;
+}
+
+#button1 a{
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0,4);
+    background: #262c37;
+    letter-spacing: 2px;
+    font-size: 16px;
+    transition: 0.5s;
+
+}
+
+#button1 a:hover{
+    color: rgba(255, 255, 255, 1);
+}
+
+#button1 a span{
+    display: block;
+    position: absolute;
+    background: #2894ff;
+}
+
+#button1 a span:nth-child(1)
+{
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+
+#button1 a:hover span:nth-child(1)
+{
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+}
+
+#button1 a span:nth-child(2)
+{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
+#button1 a:hover span:nth-child(2)
+{
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+#button1 a span:nth-child(3)
+{
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+#button1 a:hover span:nth-child(3)
+{
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+#button1 a span:nth-child(4)
+{
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+#button1 a:hover span:nth-child(4)
+{
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+@keyframes text {
+    0%{
+        color: rgb(41, 41, 39);
+        margin-bottom: -40px;
+    }
+    30%{
+        letter-spacing: 25px;
+        margin-bottom: -40px;
+    }
+    85%{
+        letter-spacing: 8px;
+        margin-bottom: -40px;
+    }
+}

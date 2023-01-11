@@ -1,0 +1,25 @@
+html{
+    background-color: rgb(41, 41, 39);
+}
+
+#sidediv{
+    background-color: rgba(46, 46, 46, 0.8);
+}
+
+#subdiv{
+    background-color: rgb(34, 163, 159);
+}
+
+#regions     {
+    background-color: goldenrod;
+    width: 560px;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: black;
+    
+}

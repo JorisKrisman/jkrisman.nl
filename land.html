@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Basis JSON AJAX</title>
+    <style type="text/css">
+        body {
+            font-family: verdana;
+            font-size: 12px;
+        }
+
+        #subdiv {
+            border: 1px solid red;
+            padding: 10px;
+            max-height: 400px;
+            width: 800px;
+            overflow: auto;
+        }
+        #sidediv {
+            border: 1px solid green;
+            padding: 10px;
+            max-height: 200px;
+            width: 400px;
+            overflow: auto;
+        }
+
+        .tbl {
+            border-collapse: collapse;
+        }
+
+        .tbl td {
+            border:1px solid gray;
+            padding:5px;
+        }
+    </style>
+    <a href="/index.html">Back</a>
+    <link rel="stylesheet" href="./api.css">
+</head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<body>
+
+    <div style="margin:40px; display: flex;">
+        <div id="subdiv">dit is de subdiv</div>
+        <div id="sidediv">dodo battle royale</div>
+    </div>
+
+    <script type="text/javascript">
+        let landen;
+        $.getJSON("https://restcountries.com/v3.1/all", function (l) {
+            landen = l;
+            console.log("landen:", landen);
+            
+            let landenHTML = "<table class='tbl'>";
+
+                landen.forEach(function (objLand, index) {
+
+                    let selectBorders = "-";
+                    let lengthBorders = 0;
+                    if(objLand.borders) {
+                        lengthBorders = objLand.borders.length;
+                        selectBorders = "<select onChange='fchangeBox(this)'>";
+
+                        let brds = objLand.borders;
+                        brds.forEach(function (border, index2) {
+                            selectBorders += "<option>" + border + "</option>";
+                        });
+                        selectBorders += "</select>";
+                    }
+                    
+
+                    landenHTML += "<tr>";
+                        landenHTML += "<td>" + objLand.name.common + "</td>";
+                        landenHTML += "<td>" + objLand.capital + "</td>";
+                        landenHTML += "<td>" + lengthBorders + "</td>";
+                        landenHTML += "<td>" + selectBorders + "</td>";
+                    landenHTML += "</tr>";
+                });
+
+            landenHTML += "</table>";
+
+            document.getElementById("subdiv").innerHTML = landenHTML;
+        });
+
+        function fchangeBox(selectBox)
+        {
+            let Boxland = selectBox.value;
+            console.log("geselecteerde waarde = " + Boxland);
+
+            let htmlBoxland = "afkorting = " + Boxland + "<br>";
+
+            landen.forEach(function (land) {
+                console.log("land.cca3 = " + land.cca3);
+                    if(land.cca3 == Boxland)
+                    {
+                        htmlBoxland += "naam = " + land.name.common + "<br>";
+                        htmlBoxland += "bewoners = " + land.population + "<br>";
+                    }
+                
+           })
+                      
+           document.getElementById("sidediv").innerHTML = htmlBoxland;
+        
+       }
+    
+   </script>
+
+</body>
+</html>

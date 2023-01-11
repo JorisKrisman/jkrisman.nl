@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="game.js"> </script>
+    <link rel="stylesheet" href="./game.css">
+</head>
+<body onload="load()"> 
+
+    <div id="startstop">
+        <a href="/index.html"><span>Back</span></a>
+        <button onclick="StartTheGame()" id="start">Start</button>
+        <button onclick="StopTheGame()" id="stop">stop</button>
+    </div>
+
+    <div id="body2">    
+        <div id="divGame">
+            <div class="gameBlok" onclick="test(this)"></div>
+            <div class="gameBlok" onclick="test(this)"></div>
+            <div class="gameBlok" onclick="test(this)"></div>
+            <div class="gameBlok" onclick="test(this)"></div>
+            <div class="gameBlok" onclick="test(this)"></div>
+            <div class="gameBlok" onclick="test(this)"></div>
+            <div class="gameBlok" onclick="test(this)"></div>
+            <div class="gameBlok" onclick="test(this)"></div>
+            <div class="gameBlok" onclick="test(this)"></div>
+            <div id="searchColor" onclick="setColor()">Basiskleur</div>
+        </div>
+
+        <div id="testdiv">
+            <div id="score"></div>
+            <div id="eindscore"></div>
+        </div>
+    </div>
+
+</body>
+</html>
